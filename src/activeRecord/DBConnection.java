@@ -8,15 +8,15 @@ import java.util.Properties;
 public class DBConnection {
 
     // variables a modifier en fonction de la base
-    String userName = "root";
-    String password = "";
-    String serverName = "localhost";
+    private static String userName = "root";
+    private static String password = "";
+    private static String serverName = "localhost";
     //Attention, sous MAMP, le port est 8889
-    String portNumber = "3306";
-    String tableName = "personne";
+    private static String portNumber = "3306";
+    private static String tableName = "personne";
 
     // iL faut une base nommee testPersonne !
-    String dbName = "testpersonne";
+    private static String dbName = "testpersonne";
 
     private Connection connection;
     private static DBConnection instance;
@@ -39,7 +39,12 @@ public class DBConnection {
         return instance.connection;
     }
 
+    /**
+     * Permet de changer la base à laquelle on se connecte
+     * @param nomDB
+     */
     public static void setNomDB(String nomDB) {
-
+        dbName = nomDB;
+        instance = null;
     }
 }
