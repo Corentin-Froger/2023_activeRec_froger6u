@@ -14,7 +14,9 @@ public class TestFilm {
     @BeforeEach
     public void before() throws SQLException {
         Personne.createTable();
+        Personne.remplirTable();
         Film.createTable();
+        Film.remplirTable();
     }
 
     @AfterEach

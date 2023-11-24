@@ -3,6 +3,9 @@ package activeRecord;
 import java.sql.*;
 import java.util.ArrayList;
 
+/**
+ * Classe représentant un Film
+ */
 public class Film {
     private String titre;
     private int id, id_real;
@@ -76,6 +79,14 @@ public class Film {
         String create = "CREATE TABLE Film ( " + "ID INTEGER  AUTO_INCREMENT, "
                 + "TITRE varchar(40) NOT NULL, " + "ID_REA varchar(40) DEFAULT NULL, " + "PRIMARY KEY (ID))";
 
+        Statement stmt = connect.createStatement();
+
+        stmt.executeUpdate(create);
+    }
+
+    public static void remplirTable() throws SQLException {
+        Connection connect = DBConnection.getConnection();
+
         String insert = """
                 INSERT INTO `Film` (`id`, `titre`, `id_rea`) VALUES
                 (1, 'Arche perdue', 1),
@@ -89,7 +100,6 @@ public class Film {
 
         Statement stmt = connect.createStatement();
 
-        stmt.executeUpdate(create);
         stmt.executeUpdate(insert);
     }
 

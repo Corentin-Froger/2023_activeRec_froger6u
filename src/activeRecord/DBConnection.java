@@ -21,6 +21,10 @@ public class DBConnection {
     private Connection connection;
     private static DBConnection instance;
 
+    /**
+     * Constructeur privé
+     * @throws SQLException
+     */
     private DBConnection() throws SQLException {
         // creation de la connection
         Properties connectionProps = new Properties();
@@ -32,6 +36,12 @@ public class DBConnection {
         this.connection = DriverManager.getConnection(urlDB, connectionProps);
     }
 
+    /**
+     * Renvoie l'objet connection de la classe, si la classe n'a
+     * jamais été instanciée, crée une instance de la classe avant
+     * @return
+     * @throws SQLException
+     */
     public static Connection getConnection() throws SQLException {
         if (instance == null) {
             instance = new DBConnection();

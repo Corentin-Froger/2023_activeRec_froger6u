@@ -12,6 +12,7 @@ public class TestPersonne {
     @BeforeEach
     public void before() throws SQLException {
         Personne.createTable();
+        Personne.remplirTable();
     }
 
     @AfterEach
