@@ -6,7 +6,6 @@ import java.util.ArrayList;
 /**
  * cette classe a juste pour objectif de verifier les noms des methodes
  */
-/*
 public class CompilationMain {
 
     public static void main(String[] args) throws SQLException, RealisateurAbsentException {
@@ -118,4 +117,4 @@ public class CompilationMain {
 
     }
 
-}*/
+}

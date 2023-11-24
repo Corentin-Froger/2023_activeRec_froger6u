@@ -94,9 +94,9 @@ public class Personne {
     public static void deleteTable() throws SQLException {
         Connection connect = DBConnection.getConnection();
 
-        String drop2 = "DROP TABLE Personne";
-        Statement stmt2 = connect.createStatement();
-        stmt2.executeUpdate(drop2);
+        String drop = "DROP TABLE Personne";
+        Statement stmt = connect.createStatement();
+        stmt.executeUpdate(drop);
     }
 
     public static ArrayList<Personne> findAll() throws SQLException {
@@ -162,6 +162,14 @@ public class Personne {
 
     private void setId(int id) {
         this.id = id;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
     }
 
     @Override
